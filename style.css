@@ -1,0 +1,142 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    position: relative;
+    top: -50px;
+    margin-bottom: -50px;
+}
+
+body {
+    min-height: 100vh;
+    /* Dark Deep Space Gradient */
+    background: linear-gradient(-45deg, #0f172a, #1e1b4b, #2e1065, #020617);
+    background-size: 400% 400%;
+    animation: aurora 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    overflow-x: hidden;
+}
+
+@keyframes aurora {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Allows you to click boxes through the canvas */
+    z-index: 999;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    z-index: 10;
+}
+
+h1 {
+    font-size: 5vmin;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+.game {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.box {
+    height: 18vmin;
+    width: 18vmin;
+    border-radius: 12px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    font-size: 8vmin;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.box:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.winner-highlight {
+    background: #10b981 !important;
+    box-shadow: 0 0 20px #10b981;
+}
+
+#reset-btn {
+    padding: 12px 30px;
+    background-color: #e11d48;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(225, 29, 72, 0.4);
+    transition: 0.3s;
+}
+
+#reset-btn:hover {
+    transform: scale(1.05);
+    background-color: #be123c;
+}
+
+.msg-container {
+    position: absolute;
+    top: 10%;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+#msg {
+    font-size: 5vmin;
+    font-weight: bold;
+    margin-bottom: 100px;
+}
+
+ #emoji-container{
+  position: fixed;
+  font-size: 26px;
+  opacity: 0.08;
+  animation: float 12s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+.hide { display: none; }
