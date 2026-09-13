@@ -68,7 +68,7 @@ const checkWinner = () => {
 };
 
 const showWinner = (winner, pattern) => {
-    msg.innerText = `Congratulations! ${winner} wins! 🎉`;
+    msg.innerText = `Congratulations! ${winner} wins!`;
     msgContainer.classList.remove("hide");
     pattern.forEach(i => boxes[i].classList.add("winner-highlight"));
     boxes.forEach(box => box.disabled = true);
@@ -91,7 +91,7 @@ boxes.forEach((box) => {
 
         let isWinner = checkWinner();
         if (count === 9 && !isWinner) {
-            msg.innerText = "It's a Draw! 🤝";
+            msg.innerText = "It's a Draw!";
             msgContainer.classList.remove("hide");
         }
     });
