@@ -4,6 +4,7 @@ const msgContainer = document.querySelector(".msg-container");
 const msg = document.getElementById("msg");
 const canvas = document.getElementById('confetti-canvas');
 const ctx = canvas.getContext('2d');
+const playAgain = document.querySelector("#play-again");
 
 let turnO = true; 
 let count = 0; 
@@ -68,7 +69,6 @@ const checkWinner = () => {
 };
 
 const showWinner = (winner, pattern) => {
-    msg.innerText = `Congratulations! ${winner} wins!`;
     msgContainer.classList.remove("hide");
     pattern.forEach(i => boxes[i].classList.add("winner-highlight"));
     boxes.forEach(box => box.disabled = true);
